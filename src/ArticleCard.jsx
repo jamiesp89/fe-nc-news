@@ -1,9 +1,9 @@
-import { link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function ArticleCard({ article }) {
   return (
     <div className="articleCard">
-      <Link to={`/Articles/${article.article_id}`}>
+      <Link to={`/articles/${article.article_id}`}>
         <div>{article.title}</div>
       </Link>
       <h1>{article.title}</h1>
