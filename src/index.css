@@ -1,12 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300&display=swap");
 
 /* base styles */
-* {
+body {
   margin: 0;
   font-family: "Radio Canada";
-  color: #333;
+  color: #002642;
+  background-color: #f4ecd6;
 }
 
+h2 {
+  color: #f4ecd6;
+  margin: 0;
+}
+
+h4,
+h5,
+h6 {
+  color: #829399;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Navbar */
 .navbar {
   padding: 20px;
   display: flex;
@@ -16,7 +35,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 
-.navbar h1 {
+.title {
   color: #f1356d;
 }
 
@@ -30,8 +49,70 @@
   color: #f1356d;
 }
 
+.navbar li {
+  display: inline;
+}
+
 .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+}
+
+/* Article Card */
+.articleCard {
+  border-style: solid;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background-color: #88b7b5;
+  max-width: 800px;
+}
+
+.articleCard:hover {
+  border-color: #f2f2f2;
+}
+
+.articleCardLink {
+  text-decoration: none;
+}
+
+.topic {
+  color: #ff5a5f;
+  display: inline;
+  text-decoration: none;
+}
+
+.topicLink {
+  text-decoration: none;
+}
+
+.topicLink:hover {
+  color: #f1356d;
+}
+
+.author {
+  display: inline;
+  margin-left: 20px;
+}
+
+.fullArticle {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.commentList {
+  margin-top: 10px;
+  border-style: solid;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.commentCard {
+  background-color: #5adbff;
+  margin-bottom: 10px;
 }

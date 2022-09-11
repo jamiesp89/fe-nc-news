@@ -1,11 +1,30 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { fetchTopics } from "./api";
+
 const Navbar = () => {
+  const [topics, setTopics] = useState([]);
+
+  useEffect(() => {
+    fetchTopics().then(({ data: { topics } }) => {
+      setTopics(topics);
+    });
+  }, []);
+
   return (
     <nav className="navbar">
-      <h1>NC News</h1>
-      <div className="links">
-        <a href="/">Home</a>
-        <a href="/create">Create</a>
-      </div>
+      <Link to={`/`} className="title">
+        NC News
+      </Link>
+      <ul className="links">
+        {topics.map((topic) => {
+          return (
+            <li key={topic.slug}>
+              <Link to={`/${topic.slug}`}>{topic.slug}</Link>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 };

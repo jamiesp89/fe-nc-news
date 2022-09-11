@@ -20,7 +20,6 @@ export default function ArticleList() {
   if (isLoading) return <p>Loading...</p>;
   return (
     <div className="article_list">
-      <h1>article list</h1>
       <ul>
         {articles.map((article) => {
           return <ArticleCard article={article} key={article.article_id} />;
