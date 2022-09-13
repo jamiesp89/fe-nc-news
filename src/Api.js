@@ -15,7 +15,11 @@ export const fetchArticle = (article_id) => {
 };
 
 export const patchArticle = (article_id, inc_votes) => {
-  return ncNewsApi.patch(`/articles/${article_id}`, { inc_votes });
+  return ncNewsApi
+    .patch(`/articles/${article_id}`, { inc_votes })
+    .then(({ data: { article } }) => {
+      return article;
+    });
 };
 
 //TOPICS
