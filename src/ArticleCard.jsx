@@ -12,7 +12,6 @@ export default function ArticleCard({ article }) {
         <h4 className="author">{`Posted by ${article.author}`}</h4>
         <h2>{article.title}</h2>
         <h5>{article.created_at}</h5>
-        <h5>{`${article.votes} votes`}</h5>
         <h5>{`${article.comment_count} comments`}</h5>
       </Link>
     </div>
