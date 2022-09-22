@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { fetchTopics } from "./api";
+import { userContext } from "./contexts/userContext";
 
 const Navbar = () => {
+  const { loggedInUser } = useContext(userContext);
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
@@ -25,6 +27,14 @@ const Navbar = () => {
           );
         })}
       </ul>
+      <span>
+        {loggedInUser.username}
+        <img
+          className="nav-img-avatar"
+          src={loggedInUser.avatar_url}
+          alt={loggedInUser.username}
+        />
+      </span>
     </nav>
   );
 };

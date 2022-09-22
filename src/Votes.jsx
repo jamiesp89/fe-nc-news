@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { patchArticle } from "./api";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export default function Votes({ article }) {
   const [score, setScore] = useState(0);
@@ -25,21 +27,17 @@ export default function Votes({ article }) {
 
   return (
     <div>
-      <button
+      <ArrowUpwardIcon
         onClick={() => {
           handleVote(1);
         }}
-      >
-        Upvote
-      </button>
+      ></ArrowUpwardIcon>
       <p>{totalVotes}</p>
-      <button
+      <ArrowDownwardIcon
         onClick={() => {
           handleVote(-1);
         }}
-      >
-        Downvote
-      </button>
+      ></ArrowDownwardIcon>
     </div>
   );
 }

@@ -59,6 +59,13 @@ ul {
   padding: 20px;
 }
 
+.nav-img-avatar {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
 /* Article Card */
 .articleCard {
   border-style: solid;
@@ -116,3 +123,5 @@ ul {
   background-color: #5adbff;
   margin-bottom: 10px;
 }
+
+/* Votes */

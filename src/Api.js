@@ -32,4 +32,8 @@ export const fetchCommentsByArticleId = (article_id) => {
   return ncNewsApi.get(`/articles/${article_id}/comments`);
 };
 
+export const addCommentByArticleId = (article_id, newComment) => {
+  return ncNewsApi.post(`/articles/${article_id}/comments`, newComment);
+};
+
 //USERS

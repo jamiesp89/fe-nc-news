@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { fetchCommentsByArticleId } from "./api";
+import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
 
-export default function Comments() {
+export default function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
-  const { article_id } = useParams();
+  const [commentsNeedUpdating, setCommentsNeedUpdating] = useState(false);
 
   useEffect(() => {
     fetchCommentsByArticleId(article_id).then(({ data: { comments } }) => {
-      console.log(comments);
       setComments(comments);
+      setCommentsNeedUpdating(false);
     });
-  }, [article_id]);
+  }, [article_id, commentsNeedUpdating]);
 
   return (
     <div className="commentList">
-      <h4>Comments</h4>
+      <CommentAdder
+        article_id={article_id}
+        setCommentsNeedUpdating={setCommentsNeedUpdating}
+      />
       <ul>
         {comments.map((comment) => {
           return (
