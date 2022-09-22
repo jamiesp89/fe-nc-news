@@ -1,6 +1,6 @@
 import CommentDeleter from "./CommentDeleter";
 
-export default function CommentCard({ comment, setCommentsNeedsUpdating }) {
+export default function CommentCard({ comment, setCommentsNeedUpdating }) {
   return (
     <div className="commentCard">
       <h5>{comment.author}</h5>
@@ -8,7 +8,7 @@ export default function CommentCard({ comment, setCommentsNeedsUpdating }) {
       <h5>{comment.votes}</h5>
       <CommentDeleter
         comment={comment}
-        setCommentsNeedsUpdating={setCommentsNeedsUpdating}
+        setCommentsNeedUpdating={setCommentsNeedUpdating}
       ></CommentDeleter>
     </div>
   );
