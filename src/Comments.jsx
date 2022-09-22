@@ -26,6 +26,7 @@ export default function Comments({ article_id }) {
             <CommentCard
               comment={comment}
               key={comment.comment_id}
+              setCommentNeedsUpdating={setCommentsNeedUpdating}
             ></CommentCard>
           );
         })}
