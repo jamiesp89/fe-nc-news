@@ -6,8 +6,8 @@ const ncNewsApi = axios.create({
 });
 
 //ARTICLES
-export const fetchArticles = (topic) => {
-  return ncNewsApi.get("/articles", { params: { topic } });
+export const fetchArticles = (topic, sort_by, order) => {
+  return ncNewsApi.get("/articles", { params: { topic, sort_by, order } });
 };
 
 export const fetchArticle = (article_id) => {

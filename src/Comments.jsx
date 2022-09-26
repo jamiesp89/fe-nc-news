@@ -6,7 +6,6 @@ import CommentCard from "./CommentCard";
 export default function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
   const [commentsNeedUpdating, setCommentsNeedUpdating] = useState(false);
-  console.log(commentsNeedUpdating);
 
   useEffect(() => {
     fetchCommentsByArticleId(article_id).then(({ data: { comments } }) => {

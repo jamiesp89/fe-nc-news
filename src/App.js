@@ -4,6 +4,7 @@ import ArticleList from "./ArticleList";
 import ArticlePage from "./ArticlePage";
 import { userContext } from "./contexts/userContext";
 import { useState } from "react";
+import PageNotFound from "./PageNotFound";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<ArticleList />} />
             <Route path="/:topic" element={<ArticleList />} />
             <Route path="articles/:article_id" element={<ArticlePage />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </BrowserRouter>

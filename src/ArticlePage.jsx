@@ -2,24 +2,42 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchArticle } from "./api";
 import Comments from "./Comments";
+import Votes from "./Votes";
+import ErrorPage from "./ErrorPage";
 
 export default function ArticlePage() {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
-    fetchArticle(article_id).then(({ data: { article } }) => {
-      setArticle(article);
-      setIsLoading(false);
-    });
+    setError(null);
+    fetchArticle(article_id)
+      .then(({ data: { article } }) => {
+        setArticle(article);
+        setIsLoading(false);
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg },
+            status,
+          },
+        }) => {
+          setError({ status, msg });
+          setIsLoading(false);
+        }
+      );
   }, [article_id]);
 
+  if (error) return <ErrorPage error={error} />;
   if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="fullArticle">
+      <Votes article={article}></Votes>
       <Link className="topicLink" to={`/${article.topic}`}>
         <h4 className="topic">{article.topic}</h4>
       </Link>
