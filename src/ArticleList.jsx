@@ -41,6 +41,20 @@ export default function ArticleList() {
     setSearchParams({ sort_by: event.target.value });
   };
 
+  const handleOrderBy = (event) => {
+    if (order === null || order === "DESC") {
+      setSearchParams({
+        sort_by: sort_by ? sort_by : "created_at",
+        order: "ASC",
+      });
+    } else {
+      setSearchParams({
+        sort_by: sort_by ? sort_by : "created_at",
+        order: "DESC",
+      });
+    }
+  };
+
   return (
     <>
       <label>
@@ -54,6 +68,9 @@ export default function ArticleList() {
           <option value="votes">Votes</option>
         </select>
       </label>
+      <button value={order ? order : "DESC"} onClick={handleOrderBy}>
+        {order}
+      </button>
       <div className="article_list">
         <ul>
           {articles.map((article) => {
