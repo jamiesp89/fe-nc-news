@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { timeAgo } from "./utils/timeAgo";
 import Votes from "./Votes";
 
 export default function ArticleCard({ article }) {
@@ -12,8 +13,9 @@ export default function ArticleCard({ article }) {
       <Link className="topicLink" to={`/${article.topic}`}>
         <h4 className="topic">{article.topic}</h4>
       </Link>
-      <h4 className="author">{`Posted by ${article.author}`}</h4>
-      <h5>{article.created_at}</h5>
+      <h4 className="author">
+        {`Posted by ${article.author} ${timeAgo(article.created_at)}`}
+      </h4>
       <h5>{`${article.comment_count} comments`}</h5>
     </div>
   );

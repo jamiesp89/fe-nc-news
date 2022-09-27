@@ -69,7 +69,7 @@ export default function ArticleList() {
         </select>
       </label>
       <button value={order ? order : "DESC"} onClick={handleOrderBy}>
-        {order}
+        {order ? order : "DESC"}
       </button>
       <div className="article_list">
         <ul>
