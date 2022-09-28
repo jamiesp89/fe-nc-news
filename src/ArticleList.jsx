@@ -57,7 +57,7 @@ export default function ArticleList() {
 
   return (
     <>
-      <label>
+      <label className="sort_by">
         Sort by
         <select
           value={sort_by ? sort_by : "created_at"}

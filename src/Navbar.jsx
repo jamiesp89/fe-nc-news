@@ -28,7 +28,7 @@ const Navbar = () => {
         })}
       </ul>
       <span>
-        {loggedInUser.username}
+        <h4>{loggedInUser.username}</h4>
         <img
           className="nav-img-avatar"
           src={loggedInUser.avatar_url}
