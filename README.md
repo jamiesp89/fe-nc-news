@@ -48,7 +48,7 @@ This should launch the app in your default browser.
 
 Please, ensure you are using
 
-`node.js v16`
+`node.js v18`
 
 or later to run this app locally.
 
