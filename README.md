@@ -10,7 +10,7 @@ You will be 'logged in' as a user by default, which will provide additional func
 
 I have provided links to my backend project below:
 
-[Backend project github repo](https://github.com/jamiesp89/be-nc-news)
+[Github repository](https://github.com/jamiesp89/be-nc-news)
 
 [Hosted version](https://be-nc-news-1.herokuapp.com/api)
 
