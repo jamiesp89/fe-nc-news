@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { userContext } from "./contexts/userContext";
 import { deleteCommentByCommentId } from "./api";
+import { Button } from "@mui/material";
 
 export default function CommentDeleter({ comment, setCommentsNeedUpdating }) {
   const { loggedInUser } = useContext(userContext);
@@ -15,7 +16,9 @@ export default function CommentDeleter({ comment, setCommentsNeedUpdating }) {
     };
 
     return (
-      <button onClick={() => handleDelete(comment_id)}>Delete comment</button>
+      <Button variant="outlined" onClick={() => handleDelete(comment_id)}>
+        Delete comment
+      </Button>
     );
   }
 }

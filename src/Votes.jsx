@@ -2,6 +2,9 @@ import { useState } from "react";
 import { patchArticle } from "./api";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import IconButton from "@mui/material/IconButton";
+import { Typography } from "@mui/material";
+import { Stack } from "@mui/system";
 
 export default function Votes({ article }) {
   const [score, setScore] = useState(0);
@@ -29,29 +32,36 @@ export default function Votes({ article }) {
   };
 
   if (score === 1) {
-    upVote = "success";
+    upVote = "primary";
   } else if (score === -1) {
-    downVote = "success";
+    downVote = "primary";
   } else {
     upVote = "";
     downVote = "";
   }
 
   return (
-    <div>
-      <ArrowUpwardIcon
-        color={upVote}
+    <Stack
+      sx={{
+        direction: "column",
+        alignItems: "flex-start",
+      }}
+    >
+      <IconButton
         onClick={() => {
           handleVote(1);
         }}
-      ></ArrowUpwardIcon>
-      <p>{totalVotes}</p>
-      <ArrowDownwardIcon
-        color={downVote}
+      >
+        <ArrowUpwardIcon color={upVote} />
+      </IconButton>
+      <Typography sx={{ ml: 1.85, mt: 0.5 }}>{totalVotes}</Typography>
+      <IconButton
         onClick={() => {
           handleVote(-1);
         }}
-      ></ArrowDownwardIcon>
-    </div>
+      >
+        <ArrowDownwardIcon color={downVote} />
+      </IconButton>
+    </Stack>
   );
 }

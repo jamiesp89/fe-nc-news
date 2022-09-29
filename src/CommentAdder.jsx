@@ -1,3 +1,5 @@
+import { TextField, Button } from "@mui/material";
+import { Stack } from "@mui/system";
 import { useState, useContext } from "react";
 import { addCommentByArticleId } from "./api";
 import { userContext } from "./contexts/userContext";
@@ -21,14 +23,18 @@ export default function CommentAdder({ article_id, setCommentsNeedUpdating }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="comment">Add comment</label>
-      <input
-        id="comment"
-        type="text"
-        value={comment}
-        onChange={(e) => setComment(e.target.value)}
-      ></input>
-      <input type="submit" value="Submit" />
+      <Stack spacing={1} sx={{ mt: 1 }}>
+        <TextField
+          fullWidth
+          label="Comment"
+          type="text"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        ></TextField>
+        <Button variant="outlined" type="submit" value="Submit">
+          Comment
+        </Button>
+      </Stack>
     </form>
   );
 }

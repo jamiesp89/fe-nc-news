@@ -1,7 +1,10 @@
+import { Typography } from "@mui/material";
+import { Stack } from "@mui/system";
+
 export default function ErrorPage({ error }) {
   return (
-    <main>
-      <h3>{`${error.status}: ${error.msg}`}</h3>
-    </main>
+    <Stack sx={{ mt: 10 }} alignItems={"center"}>
+      <Typography variant="h3">{`${error.status}: ${error.msg}`}</Typography>
+    </Stack>
   );
 }

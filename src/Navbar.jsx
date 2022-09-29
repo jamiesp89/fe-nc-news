@@ -1,7 +1,16 @@
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  List,
+  ListItem,
+  Avatar,
+} from "@mui/material";
 import { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import { fetchTopics } from "./api";
 import { userContext } from "./contexts/userContext";
+import Link from "@mui/material/Link";
+import { Stack } from "@mui/system";
 
 const Navbar = () => {
   const { loggedInUser } = useContext(userContext);
@@ -14,28 +23,32 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar">
-      <Link to={`/`} className="title">
-        NC News
-      </Link>
-      <ul className="links">
-        {topics.map((topic) => {
-          return (
-            <li key={topic.slug}>
-              <Link to={`/${topic.slug}`}>{topic.slug}</Link>
-            </li>
-          );
-        })}
-      </ul>
-      <span>
-        <h4>{loggedInUser.username}</h4>
-        <img
-          className="nav-img-avatar"
+    <AppBar position="static">
+      <Toolbar>
+        <Link href={`/`}>
+          <Typography sx={{ mt: 1 }} color={"text.primary"} variant="h2">
+            NC News
+          </Typography>
+        </Link>
+        <List component={Stack} direction={"row"}>
+          {topics.map((topic) => {
+            return (
+              <ListItem>
+                <Link href={`/${topic.slug}`}>
+                  <Typography color={"text.primary"}>{topic.slug}</Typography>
+                </Link>
+              </ListItem>
+            );
+          })}
+        </List>
+        <Typography>{loggedInUser.username}</Typography>
+        <Avatar
           src={loggedInUser.avatar_url}
           alt={loggedInUser.username}
+          sx={{ width: 56, height: 56 }}
         />
-      </span>
-    </nav>
+      </Toolbar>
+    </AppBar>
   );
 };
 

@@ -1,3 +1,4 @@
+import { Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import { fetchCommentsByArticleId } from "./api";
 import CommentAdder from "./CommentAdder";
@@ -15,12 +16,12 @@ export default function Comments({ article_id }) {
   }, [article_id, commentsNeedUpdating]);
 
   return (
-    <div className="commentList">
+    <Stack spacing={2}>
       <CommentAdder
         article_id={article_id}
         setCommentsNeedUpdating={setCommentsNeedUpdating}
       />
-      <ul>
+      <Stack spacing={1}>
         {comments.map((comment) => {
           return (
             <CommentCard
@@ -30,7 +31,7 @@ export default function Comments({ article_id }) {
             ></CommentCard>
           );
         })}
-      </ul>
-    </div>
+      </Stack>
+    </Stack>
   );
 }

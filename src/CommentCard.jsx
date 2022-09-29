@@ -1,16 +1,19 @@
+import { Card, Typography } from "@mui/material";
 import CommentDeleter from "./CommentDeleter";
 import { timeAgo } from "./utils/timeAgo";
 
 export default function CommentCard({ comment, setCommentsNeedUpdating }) {
   return (
-    <div className="commentCard">
-      <h5>{comment.body}</h5>
-      <h5>{comment.votes}</h5>
-      <h5>{`Posted by ${comment.author} ${timeAgo(comment.created_at)}`}</h5>
+    <Card variant="outlined">
+      <Typography color={"primary"} variant="body2">{`Posted by ${
+        comment.author
+      } ${timeAgo(comment.created_at)}`}</Typography>
+      <Typography variant="body1">{comment.body}</Typography>
+      <Typography>{comment.votes}</Typography>
       <CommentDeleter
         comment={comment}
         setCommentsNeedUpdating={setCommentsNeedUpdating}
       ></CommentDeleter>
-    </div>
+    </Card>
   );
 }

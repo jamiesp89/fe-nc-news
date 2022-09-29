@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300&display=swap");
 
 /* base styles */
-body {
+/* body {
   margin: 0;
   font-family: "Radio Canada";
   background-color: #011627;
@@ -30,10 +30,10 @@ ul {
 
 label {
   color: #f4ecd6;
-}
+} */
 
 /* Navbar */
-.navbar {
+/* .navbar {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -72,10 +72,10 @@ label {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-}
+} */
 
 /* Article Card */
-.articleCard {
+/* .articleCard {
   border-style: solid;
   border: 1px solid black;
   border-radius: 5px;
@@ -130,10 +130,10 @@ label {
 .commentCard {
   background-color: #5adbff;
   margin-bottom: 10px;
-}
+} */
 
 /* Article List */
-.sort_by {
+/* .sort_by {
   margin-left: 20px;
   margin-right: auto;
-}
+} */

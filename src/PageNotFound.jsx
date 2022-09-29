@@ -1,7 +1,10 @@
+import { Typography } from "@mui/material";
+import { Stack } from "@mui/system";
+
 export default function PageNotFound() {
   return (
-    <main>
-      <h1>404 Page not found</h1>
-    </main>
+    <Stack sx={{ mt: 10 }} alignItems={"center"}>
+      <Typography variant="h3">404 Page not found</Typography>
+    </Stack>
   );
 }

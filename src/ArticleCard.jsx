@@ -1,22 +1,31 @@
-import { Link } from "react-router-dom";
+import Link from "@mui/material/Link";
 import { timeAgo } from "./utils/timeAgo";
 import Votes from "./Votes";
+import Card from "@mui/material/Card";
+import { Typography } from "@mui/material";
+import { Stack } from "@mui/system";
 
 export default function ArticleCard({ article }) {
   return (
-    <div className="articleCard">
-      <Votes article={article}></Votes>
-      <Link className="articleCardLink" to={`/articles/${article.article_id}`}>
-        <h2>{article.title}</h2>
-      </Link>
+    <Card variant="outlined">
+      <Stack direction={"row"}>
+        <Votes article={article}></Votes>
+        <Stack sx={{ mt: 1 }}>
+          <Link href={`/articles/${article.article_id}`}>
+            <Typography color={"text.primary"} variant="h5">
+              {article.title}
+            </Typography>
+          </Link>
 
-      <Link className="topicLink" to={`/${article.topic}`}>
-        <h4 className="topic">{article.topic}</h4>
-      </Link>
-      <h4 className="author">
-        {`Posted by ${article.author} ${timeAgo(article.created_at)}`}
-      </h4>
-      <h5>{`${article.comment_count} comments`}</h5>
-    </div>
+          <Link href={`/${article.topic}`}>
+            <Typography variant="subtitle1">{article.topic}</Typography>
+          </Link>
+          <Typography variant="subtitle1">
+            {`Posted by ${article.author} ${timeAgo(article.created_at)}`}
+          </Typography>
+          <Typography variant="subtitle1">{`${article.comment_count} comments`}</Typography>
+        </Stack>
+      </Stack>
+    </Card>
   );
 }

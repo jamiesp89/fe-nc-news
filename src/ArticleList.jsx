@@ -1,8 +1,14 @@
+import { Box, Button, Container, CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { fetchArticles } from "./api";
 import ArticleCard from "./ArticleCard";
 import ErrorPage from "./ErrorPage";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import { Stack } from "@mui/material";
 
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
@@ -35,7 +41,12 @@ export default function ArticleList() {
   }, [topic, sort_by, order]);
 
   if (error) return <ErrorPage error={error} />;
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading)
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <CircularProgress />
+      </Box>
+    );
 
   const handleSortBy = (event) => {
     setSearchParams({ sort_by: event.target.value });
@@ -56,28 +67,28 @@ export default function ArticleList() {
   };
 
   return (
-    <>
-      <label className="sort_by">
-        Sort by
-        <select
+    <Container sx={{ my: 3 }}>
+      <FormControl sx={{ mb: 3 }} size="small">
+        <InputLabel id="sort_by">Sort by</InputLabel>
+        <Select
+          id="sort_by"
+          label={sort_by ? sort_by : "created_at"}
           value={sort_by ? sort_by : "created_at"}
           onChange={handleSortBy}
         >
-          <option value="created_at">Date</option>
-          <option value="comment_count">Comments</option>
-          <option value="votes">Votes</option>
-        </select>
-      </label>
-      <button value={order ? order : "DESC"} onClick={handleOrderBy}>
+          <MenuItem value="created_at">Date</MenuItem>
+          <MenuItem value="comment_count">Comments</MenuItem>
+          <MenuItem value="votes">Votes</MenuItem>
+        </Select>
+      </FormControl>
+      <Button value={order ? order : "DESC"} onClick={handleOrderBy}>
         {order ? order : "DESC"}
-      </button>
-      <div className="article_list">
-        <ul>
-          {articles.map((article) => {
-            return <ArticleCard article={article} key={article.article_id} />;
-          })}
-        </ul>
-      </div>
-    </>
+      </Button>
+      <Stack spacing={1}>
+        {articles.map((article) => {
+          return <ArticleCard article={article} key={article.article_id} />;
+        })}
+      </Stack>
+    </Container>
   );
 }
