@@ -20,7 +20,7 @@ export const timeAgo = (timePosted) => {
   } else if (days < 28) {
     return `${days} days ago`;
   } else {
-    return `${date.toLocaleDateString("en-gb", {
+    return `on ${date.toLocaleDateString("en-gb", {
       weekday: "long",
       year: "numeric",
       month: "short",
