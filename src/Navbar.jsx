@@ -73,7 +73,12 @@ const Navbar = () => {
         </Menu>
 
         <Link href={`/`}>
-          <Typography sx={{ mt: 1 }} color={"text.primary"} variant="h3">
+          <Typography
+            sx={{ mb: 1 }}
+            color={"text.primary"}
+            variant="h2"
+            className="ncnews"
+          >
             NC News
           </Typography>
         </Link>
