@@ -37,6 +37,29 @@ function App() {
         primary: "#ffffff",
       },
     },
+    components: {
+      MuiFormLabel: {
+        styleOverrides: {
+          root: {
+            color: "#5893df",
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          notchedOutline: {
+            borderColor: "#ffffff",
+          },
+        },
+      },
+      MuiSelect: {
+        styleOverrides: {
+          icon: {
+            color: "#ffffff",
+          },
+        },
+      },
+    },
   });
 
   return (
