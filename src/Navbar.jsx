@@ -78,6 +78,7 @@ const Navbar = () => {
             color={"text.primary"}
             variant="h2"
             className="ncnews"
+            fontFamily={"Silkscreen"}
           >
             NC News
           </Typography>
