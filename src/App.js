@@ -30,6 +30,9 @@ function App() {
         default: "#192231",
         paper: "#24344d",
       },
+      tertiary: {
+        main: "#ffffff",
+      },
       text: {
         primary: "#ffffff",
       },

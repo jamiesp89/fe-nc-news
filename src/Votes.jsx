@@ -10,8 +10,8 @@ export default function Votes({ article }) {
   const [score, setScore] = useState(0);
   const [totalVotes, setTotalVotes] = useState(article.votes);
   let inc_vote = 0;
-  let upVote = "";
-  let downVote = "";
+  let upVote = "tertiary";
+  let downVote = "tertiary";
 
   const handleVote = (vote) => {
     if (vote === score) {
@@ -36,8 +36,8 @@ export default function Votes({ article }) {
   } else if (score === -1) {
     downVote = "primary";
   } else {
-    upVote = "";
-    downVote = "";
+    upVote = "tertiary";
+    downVote = "tertiary";
   }
 
   return (

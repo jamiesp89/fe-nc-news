@@ -25,6 +25,11 @@ export default function CommentAdder({ article_id, setCommentsNeedUpdating }) {
     <form onSubmit={handleSubmit}>
       <Stack spacing={1} sx={{ mt: 1 }}>
         <TextField
+          sx={{
+            "& .MuiFormLabel-root": {
+              color: "tertiary.main",
+            },
+          }}
           fullWidth
           label="Comment"
           type="text"
