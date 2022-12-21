@@ -12,7 +12,7 @@ I have provided links to my backend project below:
 
 [Github repository](https://github.com/jamiesp89/be-nc-news)
 
-[Hosted version](https://be-nc-news-1.herokuapp.com/api)
+[Hosted version](https://be-nc-news-5kz4.onrender.com/api)
 
 ### Tech overview
 

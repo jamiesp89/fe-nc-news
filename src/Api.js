@@ -2,7 +2,7 @@ import axios from "axios";
 
 //BASE
 const ncNewsApi = axios.create({
-  baseURL: "https://be-nc-news-1.herokuapp.com/api",
+  baseURL: "https://be-nc-news-5kz4.onrender.com/api",
 });
 
 //ARTICLES
