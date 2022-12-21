@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { userContext } from "./contexts/userContext";
-import { deleteCommentByCommentId } from "./api";
+import { deleteCommentByCommentId } from "./Api";
 import { Button } from "@mui/material";
 
 export default function CommentDeleter({ comment, setCommentsNeedUpdating }) {

@@ -1,7 +1,7 @@
 import { Box, Button, Container, CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { fetchArticles } from "./api";
+import { fetchArticles } from "./Api";
 import ArticleCard from "./ArticleCard";
 import ErrorPage from "./ErrorPage";
 import InputLabel from "@mui/material/InputLabel";

@@ -1,7 +1,7 @@
 import { TextField, Button } from "@mui/material";
 import { Stack } from "@mui/system";
 import { useState, useContext } from "react";
-import { addCommentByArticleId } from "./api";
+import { addCommentByArticleId } from "./Api";
 import { userContext } from "./contexts/userContext";
 
 export default function CommentAdder({ article_id, setCommentsNeedUpdating }) {

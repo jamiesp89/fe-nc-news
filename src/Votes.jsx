@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { patchArticle } from "./api";
+import { patchArticle } from "./Api";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import IconButton from "@mui/material/IconButton";

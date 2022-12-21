@@ -8,7 +8,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import { useEffect, useState, useContext } from "react";
-import { fetchTopics } from "./api";
+import { fetchTopics } from "./Api";
 import { userContext } from "./contexts/userContext";
 import Link from "@mui/material/Link";
 import { Stack } from "@mui/system";

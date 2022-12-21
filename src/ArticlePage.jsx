@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticle } from "./api";
+import { fetchArticle } from "./Api";
 import Comments from "./Comments";
 import Votes from "./Votes";
 import ErrorPage from "./ErrorPage";

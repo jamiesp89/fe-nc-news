@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 import { useEffect, useState } from "react";
-import { fetchCommentsByArticleId } from "./api";
+import { fetchCommentsByArticleId } from "./Api";
 import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
 
